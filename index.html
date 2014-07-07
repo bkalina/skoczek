@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl" manifest="/cache.appcache">
+<head>
+<meta charset="UTF-8">
+<title>Problem skoczka szachowego</title>
+<script src="chess.js"></script>
+</head>
+<body
+	style="border: 1px dotted; padding: 20px; text-align: center; min-width: 550px; width: 50%; height: auto; margin: 0 auto; margin-top: 20px;">
+	<h1>Problem skoczka szachowego</h1>
+	<p id="guide" style="border: 1px dotted; padding: 5px">Zadanie
+		polega na obejściu skoczkiem wszystkich pól planszy tak, żeby na
+		każdym polu stanąć raz i tylko raz.</p>
+	<p id="moves">
+		Ilośc wykonanych ruchów: <span id="movecount">0</span><br> <span
+			id="gameInfo" style="color: red; font-weight: bold;"></span>
+	</p>
+	<canvas style="width: auto; height: auto;" id="chess_canvas"></canvas>
+	<br>
+	<p>Wybierz rozmiar planszy</p>
+	<input id="board5" type="button" value="5x5" onclick="init(5)" />
+	<input id="board8" type="button" value="8x8" onclick="init(8);" />
+	<input id="board10" type="button" value="10x10" onclick="init(10);" />
+	<script>
+		initGame(chess_canvas, document.getElementById('movecount'), document
+				.getElementById('gameInfo'), 8);
+		function init(size) {
+			initGame(chess_canvas, document.getElementById('movecount'),
+					document.getElementById('gameInfo'), size);
+		}
+	</script>
+</body>
+</html>
